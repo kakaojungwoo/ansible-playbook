@@ -5,4 +5,4 @@
   
   tasks:
     - name: nginx 설치하기
-      shell: docker service create --name nginx_install --contstraint node.role==worker -p 8080:80 --with-registry-auth nginx 
+      shell: docker service create --name nginx_install --replicas 3 --constraint node.role==worker -p 8080:80 --with-registry-auth nginx 
