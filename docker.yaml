@@ -4,29 +4,7 @@
   become: yes
   
   tasks:
-<<<<<<< HEAD
     - name: nginx 설치하기
       shell: docker service create \
       --name nginx_install --contstraint node.role==worker \
       -p 8080:80 --with-registry-auth nginx 
-     
-=======
-    - name: nginx
-      apt:
-        name: nginx
-        state: present
-    - name: index.html
-      get_url:
-        url: https://www.nginx.com
-        dest: /var/www/html
-    - name: service 
-      service:
-        name: nginx
-        state: started
-        enabled: true
-    - name: ufw
-      service:
-        name: ufw
-        state: stopped
-        enabled: false
->>>>>>> a6420017d1e550dc7140d5a6357ab6ca2de2be1b
